@@ -59,7 +59,7 @@
     </div>
   </div>
   @endif
-
+<!--
 <div class="panel panel-default corner-radius" style="
     text-align: center;
     background-color: transparent;
@@ -72,6 +72,7 @@
 @if (Route::currentRouteName() == 'topics.index')
     @include('layouts.partials._resources_panel')
 @endif
+-->
 
 @if (isset($active_users) && count($active_users))
     <div class="panel panel-default corner-radius panel-active-users">
@@ -95,39 +96,39 @@
 </div>
 @endif
 
-
-  <div class="panel panel-default corner-radius">
-    <div class="panel-body text-center sidebar-sponsor-box">
-        @if(isset($banners['sidebar-sponsor']))
-            @foreach($banners['sidebar-sponsor'] as $banner)
-                <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
-                    <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
-                </a>
-                <hr>
-            @endforeach
-        @endif
-  </div>
-  </div>
-
-@if (Route::currentRouteName() != 'home')
-  @if (isset($links) && count($links))
+    <!--
     <div class="panel panel-default corner-radius">
-      <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ lang('Links') }}</h3>
-      </div>
-      <div class="panel-body text-center" style="padding-top: 5px;">
-        @foreach ($links as $link)
-            <a href="{{ $link->link }}" target="_blank" rel="nofollow" title="{{ $link->title }}" style="padding: 3px;">
-                <img src="{{ $link->cover }}" style="width:150px; margin: 3px 0;">
-            </a>
-        @endforeach
-      </div>
+        <div class="panel-body text-center sidebar-sponsor-box">
+            @if(isset($banners['sidebar-sponsor']))
+                @foreach($banners['sidebar-sponsor'] as $banner)
+                    <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
+                        <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
+                    </a>
+                    <hr>
+                @endforeach
+            @endif
+        </div>
     </div>
-  @endif
-@endif
 
+    @if (Route::currentRouteName() != 'home')
+      @if (isset($links) && count($links))
+        <div class="panel panel-default corner-radius">
+          <div class="panel-heading text-center">
+            <h3 class="panel-title">{{ lang('Links') }}</h3>
+          </div>
+          <div class="panel-body text-center" style="padding-top: 5px;">
+            @foreach ($links as $link)
+                <a href="{{ $link->link }}" target="_blank" rel="nofollow" title="{{ $link->title }}" style="padding: 3px;">
+                    <img src="{{ $link->cover }}" style="width:150px; margin: 3px 0;">
+                </a>
+            @endforeach
+          </div>
+        </div>
+      @endif
+    @endif
+    -->
 @if (Route::currentRouteName() == 'topics.index')
-
+<!--
 <div class="panel panel-default corner-radius">
   <div class="panel-heading text-center">
     <h3 class="panel-title">{{ lang('App Download') }}</h3>
@@ -138,12 +139,12 @@
     </a>
   </div>
 </div>
-
+-->
 @endif
 
 <div id="sticker">
 
-@include('layouts.partials._resources_panel')
+<!--@include('layouts.partials._resources_panel')
 
 <div class="panel panel-default corner-radius" style="color:#a5a5a5">
   <div class="panel-body text-center">
@@ -165,7 +166,7 @@
       </a>
   </div>
 </div>
-
+-->
 </div>
 </div>
 <div class="clearfix"></div>

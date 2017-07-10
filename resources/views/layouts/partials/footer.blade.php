@@ -3,9 +3,9 @@
         <div class="row footer-top">
 
           <div class="col-sm-5 col-lg-5">
-
+                <!--
               <p class="padding-top-xsm">我们是 PHP 和 Laravel 开发者社区，致力于为 PHP 和 Laravel 开发者提供一个分享创造、结识伙伴、协同互助的平台。</p>
-
+                -->
               <div class="text-md " >
                   <a class="popover-with-html" data-content="反馈问题" target="_blank" style="padding-right:8px" href="mailto:summer@estgroupe.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                   <a class="popover-with-html" data-content="查看源代码" target="_blank" style="padding-right:8px" href="https://github.com/summerblue/phphub5"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
@@ -47,10 +47,10 @@
                   <div class="col-sm-4">
                     <h4>其他信息</h4>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('sites.index') }}"><i class="fa fa-globe text-md"></i> 推荐网站</a></li>
+                        <!--<li><a href="{{ route('sites.index') }}"><i class="fa fa-globe text-md"></i> 推荐网站</a></li>
                         <li><a href="/about"><i class="fa fa-info-circle" aria-hidden="true"></i> 关于我们</a></li>
                         <li><a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a></li>
-                        <li><a href="http://yousails.mikecrm.com/4Dh5uWU"><i class="fa fa-thumbs-up" aria-hidden="true"></i> 软件外包服务</a></li>
+                        <li><a href="http://yousails.mikecrm.com/4Dh5uWU"><i class="fa fa-thumbs-up" aria-hidden="true"></i> 软件外包服务</a></li>-->
                     </ul>
                   </div>
 
