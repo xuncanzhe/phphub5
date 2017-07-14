@@ -16,6 +16,9 @@ use App\Jobs\SendActivateMail;
 use Phphub\Handler\Exception\ImageUploadException;
 use App\Activities\UserFollowedUser;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 class UsersController extends Controller
 {
     public function __construct()
@@ -25,6 +28,19 @@ class UsersController extends Controller
                  'topics', 'articles', 'votes', 'following',
                  'followers', 'githubCard', 'githubApiProxy',
             ]]);
+    }
+
+    //Temporary processing
+    public function resetPassword($email)
+    {
+        $temp = Auth::user();
+        $newPassword = Hash::make($email."hiworld");
+        if( isset($temp) && Auth::user()->email == "admin@admin.com" ) //Is admin user
+        {
+            DB::update('update users set password = :password , verified = 1, email_notify_enabled = "yes" where email = :email', ['email'=> $email,'password'=>$newPassword]);
+            return  ['status' => 'ok'];
+        }
+        return ['status' => 'error', 'message' => 'Permission denied'];
     }
 
     public function index()

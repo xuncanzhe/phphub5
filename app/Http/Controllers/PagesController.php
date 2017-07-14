@@ -22,7 +22,8 @@ class PagesController extends Controller
         } else {
             $topics = $topic->getTopicsWithFilter('excellent');
             $banners = Banner::allByPosition();
-            return view('pages.home', compact('topics', 'banners'));
+            return redirect()->route('topics.index');
+            //return view('pages.home', compact('topics', 'banners'));
         }
     }
 

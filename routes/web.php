@@ -1,4 +1,7 @@
 <?php
+
+# -------------------my test----------------------
+
 # ------------------ Page Route ------------------------
 Route::get('/', 'PagesController@home')->name('home');
 Route::get('/about', 'PagesController@about')->name('about');
@@ -115,6 +118,7 @@ Route::group(['before' => 'manage_topics'], function () {
 
 Route::group(['before' => 'manage_users'], function () {
     Route::post('users/blocking/{id}', 'UsersController@blocking')->name('users.blocking');
+    Route::get('users/changeUserPassword/{email}', 'UsersController@resetPassword');
 });
 
 Route::post('/upload_image', 'TopicsController@uploadImage')->name('upload_image')->middleware('auth');
@@ -149,3 +153,4 @@ Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edi
 Route::get('/topics/{id}/{slug?}', 'TopicsController@show')->name('topics.show');
 Route::get('/articles/{id}/{slug?}', "TopicsController@show")->name('articles.show');
 Route::get('{name}', 'PagesController@wildcard')->name('wildcard');
+
