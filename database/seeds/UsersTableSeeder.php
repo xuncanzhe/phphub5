@@ -9,11 +9,17 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $password = bcrypt('secret');
-        $users = factory(User::class)->times(49)->make()->each(function ($user, $i) use ($password)  {
+        $users = factory(User::class)->times(2)->make()->each(function ($user, $i) use ($password)  {
             if ($i == 0) {
                 $user->name = 'admin';
-                $user->email = 'admin@estgroupe.com';
+                $user->email = 'admin@hiworld-tec.com';
                 $user->github_name = 'admin';
+                $user->verified = 1;
+            }elseif($i == 1)
+            {
+                $user->name = 'test_user';
+                $user->email = 'user@hiworld-tec.com';
+                $user->github_name = 'test';
                 $user->verified = 1;
             }
             $user->password = $password;

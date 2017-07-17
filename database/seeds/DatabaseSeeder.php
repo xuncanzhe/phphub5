@@ -7,17 +7,17 @@ class DatabaseSeeder extends Seeder
 {
     protected $seeders = [
         'UsersTableSeeder',
-        'LinksTableSeeder',
+        //'LinksTableSeeder',
         'CategoriesTableSeeder',
-        'BlogTableSeeder',
-        'TopicsTableSeeder',
-        'RepliesTableSeeder',
-        'BannersTableSeeder',
-        'FollowersTableSeeder',
+        //'BlogTableSeeder',
+        //'TopicsTableSeeder',
+        //'RepliesTableSeeder',
+        //'BannersTableSeeder',
+        //'FollowersTableSeeder',
         'ActiveUsersTableSeeder',
         'HotTopicsTableSeeder',
         'SitesTableSeeder',
-        'OauthClientsTableSeeder',
+        //'OauthClientsTableSeeder',
     ];
 
     public function run()

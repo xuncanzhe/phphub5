@@ -31,7 +31,7 @@ ______                            _              _                              
 
         <link rel="stylesheet" href="{{ cdn(elixir('assets/css/styles.css')) }}">
 
-        <link rel="shortcut icon" href="{{ cdn('favicon1.png') }}"/>
+        <link rel="shortcut icon" href="{{ cdn('faveiconc1.png') }}"/>
 
         <script>
             Config = {
@@ -65,7 +65,7 @@ ______                            _              _                              
         <div style="display: none;"
         　　document.getElementById("typediv1").style.display="none";>
             @section('wechat_icon')
-            <img src="https://dn-phphub.qbox.me/uploads/images/201701/29/1/pQimFCe1r5.png">
+            <!--<img src="https://dn-phphub.qbox.me/uploads/images/201701/29/1/pQimFCe1r5.png">-->
             @show
 
         </div>

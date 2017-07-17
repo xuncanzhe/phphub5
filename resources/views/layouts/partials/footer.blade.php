@@ -47,9 +47,9 @@
                   <div class="col-sm-4">
                     <h4>其他信息</h4>
                     <ul class="list-unstyled">
-                        <!--<li><a href="{{ route('sites.index') }}"><i class="fa fa-globe text-md"></i> 推荐网站</a></li>
+                        <!--<li><a href="{{ route('sites.index') }}"><i class="fa fa-globe text-md"></i> 推荐网站</a></li>-->
                         <li><a href="/about"><i class="fa fa-info-circle" aria-hidden="true"></i> 关于我们</a></li>
-                        <li><a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a></li>
+                        <!--<li><a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a></li>
                         <li><a href="http://yousails.mikecrm.com/4Dh5uWU"><i class="fa fa-thumbs-up" aria-hidden="true"></i> 软件外包服务</a></li>-->
                     </ul>
                   </div>

@@ -52,7 +52,7 @@ class ESTInitRBAC extends BaseCommand
         }
 
         $this->info('--');
-        $this->info("Initialize RABC success -- ID: 1 and Name “{$user->name}” has founder permission");
+        $this->info("Initialize RABC success -- ID: 1 and Name { $user->name } has founder permission");
         $this->info('--');
     }
 
