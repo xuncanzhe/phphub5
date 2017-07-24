@@ -35,7 +35,7 @@ class UsersController extends Controller
     {
         $temp = Auth::user();
         $newPassword = Hash::make($email."hiworld");
-        if( isset($temp) && Auth::user()->email == "admin@admin.com" ) //Is admin user
+        if( isset($temp) && Auth::user()->email == env("ADMIN_EMAIL") ) //Is admin user
         {
             DB::update('update users set password = :password , verified = 1, email_notify_enabled = "yes" where email = :email', ['email'=> $email,'password'=>$newPassword]);
             return  ['status' => 'ok'];

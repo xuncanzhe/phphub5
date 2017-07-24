@@ -16,7 +16,7 @@
 
 <h2 id="toc_1">说明</h2>
 
-<p>Hiworld 是积极向上的 Cesium 已经 三维 开发者社区</p>
+<p>Hiworld 是积极向上的 Cesium 以及 三维 开发者社区</p>
 <!--<p>我们致力于推动 Laravel, php-fig 等国外 PHP 新技术，新理念在中国的发展。</p>-->
 
 <p>论坛基于开源项目 PHPHub，PHPHub 由 Laravel5.1 构建，<a href="https://github.com/summerblue/phphub5">源代码在此 at GitHub</a>。欢迎贡献代码，或者 <a href="https://github.com/summerblue/phphub5/issues">提交 Bug Report</a>。</p>

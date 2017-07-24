@@ -10,7 +10,7 @@
         </button>
 
       <a href="/" class="navbar-brand" style="padding-top: 2px;">
-          <img src="{{ cdn('assets/images/Cesium_Logo_Color.jpg') }}" alt="Laravel China" style="height: 48px;width: 236px;" />
+          <img src="{{ cdn('assets/images/Cesium_Logo_Color.jpg') }}" alt="Cesium" style="height: 48px;width: 236px;" />
       </a>
     </div>
 

@@ -73,8 +73,8 @@ class PagesController extends Controller
         $topics = Topic::excellent()->recent()->limit(20)->get();
 
         $channel =[
-            'title'       => 'Laravel China 社区',
-            'description' => '我们是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。',
+            'title'       => 'Cesium 社区',
+            'description' => '我们是Cesium三维中文社区，在这里我们讨论技术, 分享技术。',
             'link'        => url(route('feed')),
         ];
 

@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
         $users = factory(User::class)->times(2)->make()->each(function ($user, $i) use ($password)  {
             if ($i == 0) {
                 $user->name = 'admin';
-                $user->email = 'admin@hiworld-tec.com';
+                $user->email = env("ADMIN_EMAIL");
                 $user->github_name = 'admin';
                 $user->verified = 1;
             }elseif($i == 1)
