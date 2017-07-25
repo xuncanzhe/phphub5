@@ -24,9 +24,9 @@ ______                            _              _                              
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-		<meta name="keywords" content="php,laravel,php论坛,laravel论坛,php社区,laravel社区,laravel教程,php教程,laravel视频,php开源,php新手,php7,laravel5" />
+		<meta name="keywords" content="cesium,3D,technology,在线三维,在线地球,php,laravel" />
 		<meta name="author" content="PHPHub" />
-		<meta name="description" content="@section('description') Laravel China 是国内最大的 Laravel 和 PHP 中文社区，致力于推动 Laravel，PHP7、php-fig 等 PHP 新技术，新理念在中国的发展，是国内最靠谱的 PHP 论坛。 @show" />
+		<meta name="description" content="@section('description') Hiworld-tec是一个关于技术讨论的社区。@show" />
         <meta name="_token" content="{{ csrf_token() }}">
 
         <link rel="stylesheet" href="{{ cdn(elixir('assets/css/styles.css')) }}">
