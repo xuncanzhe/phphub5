@@ -34,6 +34,13 @@ class Voter
             app(UserUpvotedTopic::class)->generate(Auth::user(), $topic);
             Notification::notify('topic_upvote', Auth::user(), $topic->user, $topic);
         }
+
+        if ($topic->isShareLink()) {
+            $topic->updated_at = Carbon::now()->toDateTimeString();
+            $topic->save();
+        }
+
+        return $topic;
     }
 
     public function topicDownVote(Topic $topic)

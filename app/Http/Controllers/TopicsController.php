@@ -23,6 +23,7 @@ use Phphub\Notification\Mention;
 use App\Activities\UserPublishedNewTopic;
 use App\Activities\BlogHasNewArticle;
 use App\Activities\UserAddedAppend;
+use Carbon\Carbon;
 
 class TopicsController extends Controller implements CreatorListener
 {
@@ -47,7 +48,9 @@ class TopicsController extends Controller implements CreatorListener
     public function create(Request $request)
     {
         $category = Category::find($request->input('category_id'));
-        $categories = Category::where('id', '!=', config('phphub.blog_category_id'))->get();
+        $categories = Category::where('id', '!=', config('phphub.blog_category_id'))
+                                ->where('id', '!=', config('phphub.hunt_category_id'))
+                                ->get();
 
         return view('topics.create_edit', compact('categories', 'category'));
     }
@@ -160,7 +163,7 @@ class TopicsController extends Controller implements CreatorListener
         $topic = Topic::findOrFail($id);
         $this->authorize('update', $topic);
 
-        $data = $request->only('title', 'body', 'category_id');
+        $data = $request->only('title', 'body', 'category_id', 'link');
 
         $data['body'] = $mentionParser->parse($data['body']);
 
@@ -171,6 +174,7 @@ class TopicsController extends Controller implements CreatorListener
 
         if ($topic->isArticle() && $request->subject == 'publish' && $topic->is_draft == 'yes') {
             $data['is_draft'] = 'no';
+            $data['created_at'] = Carbon::now()->toDateTimeString();
 
             // Topic Published
             app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $mentionParser, $topic);
@@ -181,6 +185,12 @@ class TopicsController extends Controller implements CreatorListener
 
             Auth::user()->decrement('draft_count', 1);
             Auth::user()->increment('article_count', 1);
+        }
+
+        if ($topic->isShareLink()) {
+            $topic->share_link->link = $data['link'];
+            $topic->share_link->site = domain_from_url($data['link']);
+            $topic->share_link->save();
         }
 
         $topic->update($data);
@@ -201,9 +211,9 @@ class TopicsController extends Controller implements CreatorListener
     public function upvote($id)
     {
         $topic = Topic::find($id);
-        app('Phphub\Vote\Voter')->topicUpVote($topic);
+        $topic = app('Phphub\Vote\Voter')->topicUpVote($topic);
 
-        return response(['status' => 200]);
+        return response(['status' => 200, 'count' => $topic->vote_count]);
     }
 
     public function downvote($id)
